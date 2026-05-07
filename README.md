@@ -18,7 +18,7 @@ I'm **Trần Phúc Đức**, a third-year **Computer Science** student at **Ho C
 - 🎯 Focused on building **scalable**, **clean**, and **performant** applications
 - 💡 Enthusiastic about modern **JavaScript/TypeScript ecosystems**: React, Node.js, NestJS
 - 🌱 Currently deepening my knowledge in **system design**, **cloud services (Docker)**, and **backend architecture**
-- 📫 Reach me at: **phucductran.work@gmail.com**
+- 📫 Reach me at: **tranphucducht05@gmail.com**
 
 ---
 
