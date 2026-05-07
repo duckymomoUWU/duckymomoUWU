@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trần Phúc Đức - Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <style>
+        /* ─── Reset & Base ─── */
+        *,
+        *::before,
+        *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0d1117;
+            color: #e6edf3;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* ─── Scrollbar ─── */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0d1117; }
+        ::-webkit-scrollbar-thumb { background: #30363d; border-radius: 4px; }
+
+        /* ─── Container ─── */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ─── Hero ─── */
+        .hero {
+            padding: 80px 0 48px;
+            text-align: center;
+        }
+
+        .hero-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #7c3aed, #3b82f6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 44px;
+            font-weight: 700;
+            color: #fff;
+            box-shadow: 0 0 0 3px #0d1117, 0 0 0 5px rgba(124, 58, 237, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-avatar:hover { transform: scale(1.05); }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #c084fc, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .title {
+            font-size: 1.05rem;
+            color: #8b949e;
+            margin-top: 8px;
+            font-weight: 400;
+        }
+
+        .hero .university {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px;
+            padding: 6px 16px;
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #8b949e;
+        }
+
+        .hero .university svg {
+            width: 16px;
+            height: 16px;
+            fill: #8b949e;
+        }
+
+        /* ─── Bio ─── */
+        .bio {
+            max-width: 600px;
+            margin: 0 auto 56px;
+            text-align: center;
+            color: #8b949e;
+            font-size: 0.98rem;
+            line-height: 1.7;
+        }
+
+        /* ─── Section ─── */
+        .section {
+            margin-bottom: 56px;
+        }
+
+        .section-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #e6edf3;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, #30363d, transparent);
+        }
+
+        /* ─── Tech Stack Badges ─── */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 12px;
+        }
+
+        .tech-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            background: #161b22;
+            border: 1px solid #21262d;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #c9d1d9;
+            transition: all 0.25s ease;
+            cursor: default;
+        }
+
+        .tech-badge:hover {
+            border-color: #7c3aed;
+            background: #1c2333;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(124, 58, 237, 0.15);
+        }
+
+        .tech-badge i {
+            font-size: 1.3rem;
+            line-height: 1;
+        }
+
+        /* ─── GitHub Stats ─── */
+        .stats-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .stats-grid img {
+            max-width: 100%;
+            border-radius: 10px;
+            border: 1px solid #21262d;
+            background: #161b22;
+        }
+
+        .stats-card {
+            flex: 1 1 400px;
+            min-width: 0;
+        }
+
+        /* ─── Footer ─── */
+        .footer {
+            text-align: center;
+            padding: 32px 0 48px;
+            color: #484f58;
+            font-size: 0.82rem;
+        }
+
+        .footer a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        .footer a:hover { text-decoration: underline; }
+
+        /* ─── Animations ─── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .fade-in:nth-child(1) { animation-delay: 0.1s; }
+        .fade-in:nth-child(2) { animation-delay: 0.2s; }
+        .fade-in:nth-child(3) { animation-delay: 0.3s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ─── Responsive ─── */
+        @media (max-width: 600px) {
+            .hero { padding: 48px 0 32px; }
+            .hero h1 { font-size: 1.6rem; }
+            .hero-avatar { width: 90px; height: 90px; font-size: 32px; }
+            .tech-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ═══ Hero ═══ -->
+        <header class="hero fade-in">
+            <div class="hero-avatar">Đ</div>
+            <h1>Trần Phúc Đức</h1>
+            <p class="title">Computer Science Student</p>
+            <div class="university">
+                <svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+                <span>HCMUT — VNUHCM</span>
+            </div>
+        </header>
+
+        <!-- ═══ Bio ═══ -->
+        <section class="bio fade-in">
+            <p>
+                👋 Xin chào! I'm Đức — a third-year Computer Science student at 
+                <strong style="color:#c9d1d9;">Ho Chi Minh City University of Technology (HCMUT)</strong>.
+                I'm passionate about building clean, scalable software — from responsive web frontends 
+                to robust backend systems. Always exploring new technologies and looking for 
+                opportunities to grow.
+            </p>
+        </section>
+
+        <!-- ═══ Tech Stack ═══ -->
+        <section class="section fade-in">
+            <h2 class="section-title">💻 Tech Stack</h2>
+
+            <h3 style="font-size:0.9rem;font-weight:500;color:#8b949e;margin-bottom:12px;">Frontend</h3>
+            <div class="tech-grid" style="margin-bottom:24px;">
+                <div class="tech-badge"><i class="devicon-react-original colored"></i> React</div>
+                <div class="tech-badge"><i class="devicon-vitejs-plain colored"></i> Vite</div>
+                <div class="tech-badge"><i class="devicon-react-original colored"></i> React Native</div>
+                <div class="tech-badge"><i class="devicon-typescript-plain colored"></i> TypeScript</div>
+                <div class="tech-badge"><i class="devicon-javascript-plain colored"></i> JavaScript</div>
+            </div>
+
+            <h3 style="font-size:0.9rem;font-weight:500;color:#8b949e;margin-bottom:12px;">Backend</h3>
+            <div class="tech-grid" style="margin-bottom:24px;">
+                <div class="tech-badge"><i class="devicon-nodejs-plain colored"></i> Node.js</div>
+                <div class="tech-badge"><i class="devicon-nestjs-original colored"></i> NestJS</div>
+                <div class="tech-badge"><i class="devicon-java-plain colored"></i> Java</div>
+                <div class="tech-badge"><i class="devicon-python-plain colored"></i> Python</div>
+                <div class="tech-badge"><i class="devicon-csharp-plain colored"></i> C#</div>
+                <div class="tech-badge"><i class="devicon-cplusplus-plain colored"></i> C++</div>
+            </div>
+
+            <h3 style="font-size:0.9rem;font-weight:500;color:#8b949e;margin-bottom:12px;">Database &amp; Tools</h3>
+            <div class="tech-grid">
+                <div class="tech-badge"><i class="devicon-mysql-plain colored"></i> MySQL</div>
+                <div class="tech-badge"><i class="devicon-oracle-original colored"></i> Oracle DB</div>
+                <div class="tech-badge"><i class="devicon-gitlab-plain colored"></i> GitLab</div>
+                <div class="tech-badge"><i class="devicon-docker-plain colored"></i> Docker</div>
+                <div class="tech-badge"><i class="devicon-git-plain colored"></i> Git</div>
+            </div>
+        </section>
+
+        <!-- ═══ GitHub Stats ═══ -->
+        <section class="section fade-in">
+            <h2 class="section-title">📊 GitHub Stats</h2>
+            <div class="stats-grid">
+                <div class="stats-card">
+                    <img
+                        src="https://github-readme-stats.vercel.app/api?username=duckymomoUWU&show_icons=true&theme=dark&bg_color=0d1117&border_color=30363d&icon_color=7c3aed&title_color=7c3aed&text_color=c9d1d9&hide_border=false&count_private=true"
+                        alt="GitHub Stats"
+                    />
+                </div>
+                <div class="stats-card">
+                    <img
+                        src="https://github-readme-stats.vercel.app/api/top-langs/?username=duckymomoUWU&layout=compact&theme=dark&bg_color=0d1117&border_color=30363d&title_color=7c3aed&text_color=c9d1d9&hide_border=false"
+                        alt="Top Languages"
+                    />
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ Footer ═══ -->
+        <footer class="footer">
+            <p>Made with 💜 by <a href="https://github.com/duckymomoUWU">duckymomoUWU</a></p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
